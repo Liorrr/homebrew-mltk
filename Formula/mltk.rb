@@ -5,7 +5,6 @@ class Mltk < Formula
   homepage "https://github.com/Liorrr/mltk"
   url "https://files.pythonhosted.org/packages/f0/1e/51a8ee37e46edac328bafc4d78c98b6f9c9bd95f9f7c4772c2b16ebb9fa5/mlspec-0.12.6.tar.gz"
   sha256 "7120af955b62f6613abc25348e20c943245fdc1e9175a8ebc481cee0c99ba569"
-  version "0.12.6"
   license "Elastic-2.0"
 
   depends_on "rust" => :build
