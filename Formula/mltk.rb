@@ -12,7 +12,7 @@ class Mltk < Formula
     # Homebrew's venv.pip_install runs pip with --no-deps, and no runtime
     # dependency is declared as a resource, so it installed mlspec without
     # numpy, pandas, typer or rich. Let pip resolve them from PyPI instead.
-    system Formula["python@3.13"].opt_bin/"python3.13", "-m", "venv", libexec
+    system formula_opt_bin("python@3.13")/"python3.13", "-m", "venv", libexec
     system libexec/"bin/python", "-m", "pip", "install", "#{buildpath}[cli]"
     bin.write_exec_script libexec/"bin/mltk"
   end
