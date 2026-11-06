@@ -1,6 +1,4 @@
 class Mltk < Formula
-  include Language::Python::Virtualenv
-
   desc "Pytest for ML — unified testing across the entire ML lifecycle"
   homepage "https://github.com/Liorrr/mltk"
   url "https://files.pythonhosted.org/packages/70/94/0d718d1b971cfef2dd2e47345008956e8fae754e4f75f9ee1f9c3e326cf9/mlspec-0.15.0.tar.gz"
@@ -11,8 +9,11 @@ class Mltk < Formula
   depends_on "python@3.13"
 
   def install
-    venv = virtualenv_create(libexec, "python3.13")
-    venv.pip_install buildpath
+    # Homebrew's venv.pip_install runs pip with --no-deps, and no runtime
+    # dependency is declared as a resource, so it installed mlspec without
+    # numpy, pandas, typer or rich. Let pip resolve them from PyPI instead.
+    system Formula["python@3.13"].opt_bin/"python3.13", "-m", "venv", libexec
+    system libexec/"bin/python", "-m", "pip", "install", "#{buildpath}[cli]"
     bin.write_exec_script libexec/"bin/mltk"
   end
 
