@@ -8,6 +8,10 @@ class Mltk < Formula
   depends_on "rust" => :build
   depends_on "python@3.13"
 
+  on_linux do
+    depends_on "zlib-ng-compat"
+  end
+
   def install
     # Homebrew's venv.pip_install runs pip with --no-deps, and no runtime
     # dependency is declared as a resource, so it installed mlspec without
