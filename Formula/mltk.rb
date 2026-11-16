@@ -1,8 +1,8 @@
 class Mltk < Formula
   desc "Pytest for ML — unified testing across the entire ML lifecycle"
   homepage "https://github.com/Liorrr/mltk"
-  url "https://files.pythonhosted.org/packages/9f/9f/12c71365b3c7bc0e4f782195a7d70df20a482b6e10db187040e2e469359b/mlspec-0.17.2.tar.gz"
-  sha256 "34642a94d76c22a07300bff1971a071043300ddccfd0fd4a0fa2420e62fbad56"
+  url "https://files.pythonhosted.org/packages/5f/6d/c0ebda30394f0a70c70f60ac42f8fb33f309a9bcb831a3ee9dda684ae6ce/mlspec-0.18.0.tar.gz"
+  sha256 "3a68b646949c867a9f8a70ee678df01810e075ec133147438c3ecff5c4ff8b8e"
   license "Elastic-2.0"
 
   depends_on "rust" => :build
